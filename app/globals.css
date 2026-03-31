@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #FAF7F2;
+  --parchment: #F2EBE0;
+  --sand: #E8D9C5;
+  --terracotta: #C4714A;
+  --rust: #A85432;
+  --sienna: #8B3E22;
+  --ink: #1C1410;
+  --warm-gray: #9A8C82;
+  --sage: #7A8C6E;
+}
+
+body {
+  color: var(--ink);
+  background-color: var(--cream);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, serif;
+  color: var(--ink);
+}
+
+/* Custom Utilities for Inputs/Forms to match requirements */
+@layer components {
+  .btn-primary {
+    @apply bg-terracotta text-cream rounded-soft font-semibold px-4 py-2 hover:bg-rust transition-colors;
+  }
+  .btn-secondary {
+    @apply bg-transparent border border-terracotta text-terracotta rounded-soft font-semibold px-4 py-2 hover:bg-terracotta hover:text-cream transition-colors;
+  }
+  .card-base {
+    @apply bg-parchment border border-sand rounded-card p-6;
+  }
+  .input-upload {
+    @apply border-2 border-dashed border-sand bg-parchment rounded-card p-8 text-center transition-colors hover:border-terracotta cursor-pointer;
+  }
+  .badge-completed {
+    @apply bg-[#E8F5E0] text-[#4A7A30] px-2 py-1 rounded-full text-xs font-semibold;
+  }
+  .badge-analysis {
+    @apply bg-[#FFF3E0] text-[#E07800] px-2 py-1 rounded-full text-xs font-semibold;
+  }
+}
